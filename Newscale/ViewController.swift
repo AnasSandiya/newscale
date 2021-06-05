@@ -51,32 +51,42 @@ class ViewController: UIViewController, WKUIDelegate ,WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        print("finish..loading")
+        print("finish..loading" ,webView.url?.description)
+        
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         
-        if(backPressed){
-            self.vBack.isHidden = true
-            self.backPressed = false
-        }else{
-            let backURL = webView.backForwardList.backItem?.url.description
-            if(backURL == "https://www.newscale.app/ranking"){
-                self.vBack.isHidden = false
-                
-            }
-            
-        }
-        
+//        print(webView.url)
+//
+//        if(backPressed){
+//            self.vBack.isHidden = true
+//            self.backPressed = false
+//        }else{
+//            let backURL = webView.backForwardList.backItem?.url.description
+////
+////            print(webView.backForwardList.currentItem?.url.description, "currentItem")
+////            print(webView.backForwardList.backItem?.url.description, "backItem")
+//
+//            if(backURL == "https://www.newscale.app/ranking"){
+//                self.vBack.isHidden = false
+//
+//            }
+//
+//        }
         
         if navigationAction.navigationType == .linkActivated  {
             if let url = navigationAction.request.url,
                let host = url.host, !host.hasPrefix("www.newscale.app"),
                UIApplication.shared.canOpenURL(url) {
-                print( url)
-                print(host)
-                let safariVC = SFSafariViewController(url: url)
-                present(safariVC, animated: true, completion: nil)
+
+                let items = [URL(string: url.description)!]
+                let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+                present(ac, animated: true)
+
+                
+              //  let safariVC = SFSafariViewController(url: url)
+//                present(safariVC, animated: true, completion: nil)
                 decisionHandler(.cancel)
             } else {
                 print(navigationAction.request.url!)
@@ -84,6 +94,11 @@ class ViewController: UIViewController, WKUIDelegate ,WKNavigationDelegate {
                 decisionHandler(.allow)
             }
         } else {
+           // self.vBack.isHidden = false
+            _ = webView.backForwardList.backItem?.url.description
+            if(webView.url?.host != "www.newscale.app"){
+                self.vBack.isHidden = false
+            }
             decisionHandler(.allow)
         }
     }
@@ -135,7 +150,7 @@ class ViewController: UIViewController, WKUIDelegate ,WKNavigationDelegate {
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
         self.backPressed = true
-       // self.vBack.isHidden = true
+        self.vBack.isHidden = true
         
        
         

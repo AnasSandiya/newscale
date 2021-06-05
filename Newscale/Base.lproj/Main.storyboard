@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,14 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="m7K-ys-KDv">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="m7K-ys-KDv">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y0Q-Tv-hNy">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="19"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afH-Hb-628">
-                                                <rect key="frame" x="0.0" y="0.0" width="252" height="55"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="252" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="252" id="vgh-M1-hB6"/>
                                                 </constraints>
@@ -41,7 +40,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="afH-Hb-628" secondAttribute="bottom" constant="-5" id="7sa-Rw-r0a"/>
                                             <constraint firstItem="afH-Hb-628" firstAttribute="leading" secondItem="y0Q-Tv-hNy" secondAttribute="leading" id="Cmp-3f-hrA"/>
@@ -49,7 +48,7 @@
                                         </constraints>
                                     </view>
                                     <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fxv-Sk-5Z0">
-                                        <rect key="frame" x="0.0" y="58" width="414" height="760"/>
+                                        <rect key="frame" x="0.0" y="71" width="414" height="747"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <wkWebViewConfiguration key="configuration">
                                             <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -107,11 +106,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="m7K-ys-KDv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="80e-nk-vkU"/>
                             <constraint firstItem="Ayh-Cp-aBN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Pi8-pI-dXu"/>
                             <constraint firstAttribute="trailing" secondItem="m7K-ys-KDv" secondAttribute="trailing" id="bXa-4Q-MZm"/>
                             <constraint firstItem="m7K-ys-KDv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ebf-Wl-QZd"/>
                             <constraint firstItem="m7K-ys-KDv" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="emu-tf-gXO"/>
                             <constraint firstItem="Ayh-Cp-aBN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nxm-3x-IxP"/>
+                            <constraint firstItem="m7K-ys-KDv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rPX-2d-e9I"/>
                             <constraint firstItem="m7K-ys-KDv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sSy-DO-gRt"/>
                             <constraint firstAttribute="bottom" secondItem="Ayh-Cp-aBN" secondAttribute="bottom" id="wD4-lz-Pby"/>
                             <constraint firstItem="Ayh-Cp-aBN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xDZ-FY-yeK"/>
@@ -131,8 +132,5 @@
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="splash_img" width="512" height="512"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

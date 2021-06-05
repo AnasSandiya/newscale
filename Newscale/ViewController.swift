@@ -83,11 +83,11 @@ class ViewController: UIViewController, WKUIDelegate ,WKNavigationDelegate {
                 print(url.description)
                 
                 
-                //UIApplication.shared.open(url)
+                UIApplication.shared.open(url)
 
-                let items = [URL(string: url.description)!]
-                let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
-                present(ac, animated: true)
+//                let items = [URL(string: url.description)!]
+//                let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+//                present(ac, animated: true)
 
                 
               //  let safariVC = SFSafariViewController(url: url)

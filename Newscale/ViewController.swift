@@ -80,11 +80,14 @@ class ViewController: UIViewController, WKUIDelegate ,WKNavigationDelegate {
                let host = url.host, !host.hasPrefix("www.newscale.app"),
                UIApplication.shared.canOpenURL(url) {
 
-                UIApplication.shared.open(url)
+                print(url.description)
+                
+                
+                //UIApplication.shared.open(url)
 
-//                let items = [URL(string: url.description)!]
-//                let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
-//                present(ac, animated: true)
+                let items = [URL(string: url.description)!]
+                let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+                present(ac, animated: true)
 
                 
               //  let safariVC = SFSafariViewController(url: url)

@@ -362,7 +362,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R8Q4PCL22V;
+				DEVELOPMENT_TEAM = 45VR66YD8X;
 				INFOPLIST_FILE = "$(SRCROOT)/Newscale/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -382,7 +382,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R8Q4PCL22V;
+				DEVELOPMENT_TEAM = 45VR66YD8X;
 				INFOPLIST_FILE = "$(SRCROOT)/Newscale/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

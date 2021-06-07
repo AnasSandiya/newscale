@@ -79,16 +79,30 @@ class ViewController: UIViewController, WKUIDelegate ,WKNavigationDelegate {
             if let url = navigationAction.request.url,
                let host = url.host, !host.hasPrefix("www.newscale.app"),
                UIApplication.shared.canOpenURL(url) {
-
+                
+                
                 print(url.description)
+                if (url.absoluteString.range(of: "facebook.com") != nil){
+                    let items = [URL(string: url.description)!]
+                    let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+                    // exclude some activity types from the list (optional)
+                    ac.excludedActivityTypes = [
+                        UIActivity.ActivityType.message,
+                        UIActivity.ActivityType.airDrop,
+                        UIActivity.ActivityType.mail,
+                        UIActivity.ActivityType.assignToContact,
+                        UIActivity.ActivityType.print,
+                        UIActivity.ActivityType.addToReadingList,
+                        UIActivity.ActivityType.saveToCameraRoll,
+                        UIActivity.ActivityType.openInIBooks,
+                        UIActivity.ActivityType(rawValue: "com.apple.reminders.RemindersEditorExtension"),
+                        UIActivity.ActivityType(rawValue: "com.apple.mobilenotes.SharingExtension")]
+                    present(ac, animated: true)
+                }else{
+                    UIApplication.shared.open(url)
+                }
                 
                 
-                UIApplication.shared.open(url)
-
-//                let items = [URL(string: url.description)!]
-//                let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
-//                present(ac, animated: true)
-
                 
               //  let safariVC = SFSafariViewController(url: url)
 //                present(safariVC, animated: true, completion: nil)
